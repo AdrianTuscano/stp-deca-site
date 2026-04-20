@@ -2,6 +2,7 @@ import { ArrowLeft, LoaderCircle } from "lucide-react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../lib/auth";
+import { hasSupabaseConfig, supabaseConfigError } from "../lib/supabase";
 
 const studentIdRegex = /^s\d{6}$/i;
 
@@ -58,6 +59,12 @@ export default function Login() {
         <p className="mt-2 text-center text-sm text-slate-300">
           Enter your student ID and chapter key to access your dashboard
         </p>
+        {!hasSupabaseConfig ? (
+          <p className="mt-4 rounded-lg border border-amber-500/40 bg-amber-500/10 px-3 py-2 text-xs text-amber-200">
+            Service setup issue: {supabaseConfigError} Add required `VITE_SUPABASE_*` variables for this
+            deploy context, then redeploy.
+          </p>
+        ) : null}
 
         <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
           <div>

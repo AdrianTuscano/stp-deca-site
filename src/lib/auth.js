@@ -1,4 +1,4 @@
-import { supabase } from "./supabase";
+import { hasSupabaseConfig, supabase, supabaseConfigError } from "./supabase";
 
 const STUDENT_ID_KEY = "stp_deca_student_id";
 const studentIdRegex = /^s\d{6}$/i;
@@ -12,6 +12,14 @@ export async function login(studentId, chapterKey) {
 
   if (chapterKey !== import.meta.env.VITE_CHAPTER_KEY) {
     return { success: false, error: "Invalid chapter key." };
+  }
+
+  if (!hasSupabaseConfig || !supabase) {
+    return {
+      success: false,
+      error:
+        `Authentication service is not configured. ${supabaseConfigError || ""}`.trim(),
+    };
   }
 
   const { error } = await supabase.from("students").upsert(
