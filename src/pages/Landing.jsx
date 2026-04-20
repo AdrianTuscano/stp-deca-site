@@ -44,12 +44,7 @@ const quickLinks = [
 
 export default function Landing() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#0a0f1e] text-white">
-      <div
-        className="absolute inset-0 bg-cover bg-center brightness-110"
-        style={{ backgroundImage: "url('/assets/landing-backdrop.png')" }}
-      />
-      <div className="absolute inset-0 bg-[#0a0f1e]/55" />
+    <div className="min-h-screen bg-[#0a0f1e] text-white">
       <nav className="fixed inset-x-0 top-0 z-20 border-b border-white/10 bg-[#0a0f1e]/95 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
           <span className="inline-flex items-center gap-2 text-lg font-extrabold tracking-wide">
@@ -65,7 +60,16 @@ export default function Landing() {
         </div>
       </nav>
 
-      <main className="relative z-10 mx-auto max-w-6xl px-4 pt-24">
+      <main className="mx-auto max-w-6xl px-4 pt-24">
+        <section className="pb-8">
+          <div className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-white/15 shadow-2xl">
+            <div
+              className="h-48 bg-cover bg-center brightness-125 md:h-56 lg:h-64"
+              style={{ backgroundImage: "url('/assets/landing-backdrop.png')" }}
+            />
+          </div>
+        </section>
+
         <section className="flex min-h-[calc(100vh-6rem)] flex-col items-center justify-center text-center">
           <img
             src="/assets/deca-icon.png"
