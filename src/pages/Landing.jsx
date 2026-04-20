@@ -67,31 +67,31 @@ export default function Landing() {
             style={{ backgroundImage: "url('/assets/landing-backdrop.png')" }}
           />
           <div className="absolute inset-0 bg-[#0a0f1e]/40" />
-          <div className="relative flex min-h-[430px] flex-col items-center justify-center px-4 text-center md:min-h-[520px] lg:min-h-[560px]">
+          <div className="relative flex min-h-[430px] flex-col items-center justify-center px-4 pb-6 text-center md:min-h-[520px] lg:min-h-[560px]">
             <img
               src="/assets/deca-icon.png"
               alt="STP DECA logo"
-              className="mb-6 h-20 w-20 rounded-xl border border-white/20 object-cover shadow-lg"
+              className="mb-4 h-16 w-16 -translate-y-3 rounded-xl border border-white/20 object-cover shadow-lg md:h-18 md:w-18"
             />
             <h1 className="text-5xl font-extrabold tracking-tight md:text-7xl">Stony Point DECA</h1>
             <p className="mt-4 text-lg text-slate-100 md:text-2xl">Suits Blue Medals Gold</p>
-            <div className="mx-auto mt-8 grid w-full max-w-5xl gap-4 sm:grid-cols-3">
+            <div className="mx-auto mt-7 grid w-full max-w-4xl gap-3 sm:grid-cols-3">
               <a
                 href="#"
-                className="flex h-20 items-center justify-center rounded-xl bg-[#3b82f6] px-6 text-center text-lg font-bold text-white transition hover:brightness-110 md:text-2xl"
+                className="flex h-16 items-center justify-center rounded-xl bg-[#3b82f6] px-4 text-center text-base font-bold text-white transition hover:brightness-110 md:text-xl"
               >
                 Join DECA
               </a>
               <a
                 href="mailto:anthony_ripley@roundrockisd.org"
-                className="flex h-20 flex-col items-center justify-center rounded-xl bg-[#2563eb] px-6 text-center transition hover:brightness-110"
+                className="flex h-16 flex-col items-center justify-center rounded-xl bg-[#2563eb] px-4 text-center transition hover:brightness-110"
               >
-                <p className="text-base font-bold leading-tight text-white md:text-xl">Mailing List Request</p>
-                <p className="mt-1 text-sm font-semibold leading-tight text-white/90">Email Mr. Ripley</p>
+                <p className="text-sm font-bold leading-tight text-white md:text-base">Mailing List Request</p>
+                <p className="mt-0.5 text-xs font-semibold leading-tight text-white/90">Email Mr. Ripley</p>
               </a>
               <Link
                 to="/login"
-                className="flex h-20 items-center justify-center rounded-xl border border-white bg-[#07112a]/85 px-6 text-center text-lg font-bold text-white transition hover:bg-white hover:text-[#0a0f1e] md:text-2xl"
+                className="flex h-16 items-center justify-center rounded-xl border border-white bg-[#07112a]/85 px-4 text-center text-base font-bold text-white transition hover:bg-white hover:text-[#0a0f1e] md:text-xl"
               >
                 Member Login
               </Link>
