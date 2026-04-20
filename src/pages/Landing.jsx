@@ -42,20 +42,64 @@ const quickLinks = [
   },
 ];
 
+const joinSteps = [
+  {
+    step: "1",
+    title: "Join Our Remind",
+    description: "Text @stpdeca26 to 81010 to stay updated on all announcements and meetings",
+  },
+  {
+    step: "2",
+    title: "Fill Out the Membership Form",
+    description: "Click here to complete the membership form online",
+    href: "#",
+  },
+  {
+    step: "3",
+    title: "Attend a Meeting",
+    description: "Come to our next chapter meeting to learn more and meet current members",
+  },
+  {
+    step: "4",
+    title: "Start Competing",
+    description: "Choose your competition events and begin preparation with our team",
+  },
+];
+
 export default function Landing() {
   return (
     <div className="min-h-screen bg-[#0a0f1e] text-white">
       <nav className="fixed inset-x-0 top-0 z-20 border-b border-white/10 bg-[#0a0f1e]/95 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4">
           <span className="inline-flex items-center gap-2 text-lg font-extrabold tracking-wide">
             <img src="/assets/deca-icon.png" alt="STP DECA icon" className="h-7 w-7 rounded-md object-cover" />
             STP DECA
           </span>
+          <div className="hidden items-center gap-2 md:flex">
+            <a href="#quick-links" className="rounded-lg border border-white/20 px-3 py-1.5 text-xs font-semibold text-slate-100 transition hover:bg-white/10">
+              Quick Links
+            </a>
+            <a href="#join-deca" className="rounded-lg border border-white/20 px-3 py-1.5 text-xs font-semibold text-slate-100 transition hover:bg-white/10">
+              Join DECA
+            </a>
+            <a href="#chapter-advisors" className="rounded-lg border border-white/20 px-3 py-1.5 text-xs font-semibold text-slate-100 transition hover:bg-white/10">
+              Advisors
+            </a>
+            <a href="#chapter-calendar" className="rounded-lg border border-white/20 px-3 py-1.5 text-xs font-semibold text-slate-100 transition hover:bg-white/10">
+              Calendar
+            </a>
+            <Link
+              to="/login"
+              className="rounded-lg border border-white px-4 py-2 text-sm font-semibold transition hover:bg-white hover:text-[#0a0f1e]"
+            >
+              Member Login →
+            </Link>
+          </div>
           <Link
             to="/login"
-            className="rounded-lg border border-white px-4 py-2 text-sm font-semibold transition hover:bg-white hover:text-[#0a0f1e]"
+            className="rounded-lg border border-white px-4 py-2 text-sm font-semibold transition hover:bg-white hover:text-[#0a0f1e] md:hidden"
           >
-            Member Login →
+            Login →
           </Link>
         </div>
       </nav>
@@ -71,13 +115,13 @@ export default function Landing() {
             <img
               src="/assets/deca-icon.png"
               alt="STP DECA logo"
-              className="mb-4 h-16 w-16 -translate-y-3 rounded-xl border border-white/20 object-cover shadow-lg md:h-18 md:w-18"
+              className="mb-4 h-16 w-16 -translate-y-3 rounded-xl border border-white/20 object-cover shadow-lg md:h-20 md:w-20"
             />
             <h1 className="text-5xl font-extrabold tracking-tight md:text-7xl">Stony Point DECA</h1>
             <p className="mt-4 text-lg text-slate-100 md:text-2xl">Suits Blue Medals Gold</p>
             <div className="mx-auto mt-7 grid w-full max-w-4xl gap-3 sm:grid-cols-3">
               <a
-                href="#"
+                href="#join-deca"
                 className="flex h-16 items-center justify-center rounded-xl bg-[#3b82f6] px-4 text-center text-base font-bold text-white transition hover:brightness-110 md:text-xl"
               >
                 Join DECA
@@ -109,7 +153,7 @@ export default function Landing() {
           ))}
         </section>
 
-        <section className="pb-10">
+        <section id="quick-links" className="scroll-mt-28 pb-10">
           <h2 className="text-xs font-extrabold tracking-[0.2em] text-slate-300">QUICK LINKS</h2>
           <div className="mt-3 rounded-2xl border border-white/10 bg-[#111827] p-5 text-white shadow-lg">
             <h3 className="text-center text-3xl font-extrabold">Quick Links</h3>
@@ -133,7 +177,39 @@ export default function Landing() {
           </div>
         </section>
 
-        <section className="pb-10">
+        <section id="join-deca" className="scroll-mt-28 pb-10">
+          <h2 className="text-xs font-extrabold tracking-[0.2em] text-slate-300">JOIN DECA</h2>
+          <div className="mt-3 rounded-2xl border border-white/10 bg-[#111827] p-6 shadow-lg">
+            <h3 className="text-center text-4xl font-extrabold text-white">How to Join</h3>
+            <div className="mt-8 grid gap-8 md:grid-cols-4">
+              {joinSteps.map((item, index) => (
+                <article key={item.step} className="text-center">
+                  <div className="mb-6 flex items-center">
+                    <span className="inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[#123b8f] text-4xl font-extrabold text-white">
+                      {item.step}
+                    </span>
+                    {index !== joinSteps.length - 1 ? <span className="ml-4 hidden h-[2px] w-full bg-[#123b8f] md:block" /> : null}
+                  </div>
+                  <h4 className="text-3xl font-extrabold text-white">{item.title}</h4>
+                  <p className="mx-auto mt-3 max-w-xs text-lg text-slate-300">
+                    {item.href ? (
+                      <>
+                        <a href={item.href} className="font-bold text-[#60a5fa] underline underline-offset-2">
+                          Click here
+                        </a>{" "}
+                        to complete the membership form online
+                      </>
+                    ) : (
+                      item.description
+                    )}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="chapter-advisors" className="scroll-mt-28 pb-10">
           <h2 className="text-xs font-extrabold tracking-[0.2em] text-slate-300">CHAPTER ADVISORS</h2>
           <div className="mt-3 rounded-2xl border border-white/10 bg-[#111827] p-5 text-white shadow-lg">
             <h3 className="text-center text-4xl font-extrabold">Chapter Advisors</h3>
@@ -219,7 +295,7 @@ export default function Landing() {
           </div>
         </section>
 
-        <section className="pb-12">
+        <section id="chapter-calendar" className="scroll-mt-28 pb-12">
           <h2 className="text-xs font-extrabold tracking-[0.2em] text-slate-300">CHAPTER CALENDAR</h2>
           <div className="mt-3 overflow-hidden rounded-2xl border border-white/10 bg-[#111827] p-2 shadow-lg">
             <iframe
