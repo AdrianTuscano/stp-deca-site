@@ -176,7 +176,7 @@ export default function Dashboard() {
           <div className="flex flex-col gap-4 rounded-xl bg-[#1e3a5f] p-6 text-white md:flex-row md:items-center md:justify-between">
             <div>
               <h3 className="text-xl font-bold">DECA Plus Practice Tests</h3>
-              <p className="mt-1 text-sm text-[#FAA41B]">
+              <p className="mt-1 text-sm text-white/90">
                 Track your answers and see your performance by instructional area
               </p>
             </div>
