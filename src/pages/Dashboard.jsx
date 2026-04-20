@@ -3,16 +3,12 @@ import {
   Book,
   BookOpen,
   CheckSquare,
-  ExternalLink,
   FileText,
   Lock,
   Mail,
-  MapPin,
-  Phone,
   Plus,
   Star,
   Trophy,
-  UserRound,
   Users,
 } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -120,29 +116,6 @@ const remindGroups = [
   { year: "FRESHMEN", handle: "@sphsdeca30", color: "#db2777", href: "#" },
 ];
 
-const quickLinks = [
-  {
-    title: "Official DECA Website",
-    subtitle: "National DECA organization resources",
-    href: "https://www.deca.org/",
-  },
-  {
-    title: "Texas DECA",
-    subtitle: "State-level information and competitions",
-    href: "https://www.texasdeca.org/",
-  },
-  {
-    title: "List of Competitions",
-    subtitle: "Browse all DECA competitive events and categories",
-    href: "https://www.deca.org/compete#competitive-events",
-  },
-  {
-    title: "Corporate Challenges",
-    subtitle: "Real-world business challenges from industry partners",
-    href: "https://www.deca.org/challenges",
-  },
-];
-
 function SectionLabel({ children }) {
   return <h2 className="text-xs font-extrabold tracking-[0.15em] text-slate-500">{children}</h2>;
 }
@@ -179,128 +152,6 @@ export default function Dashboard() {
             {membership.map((card) => (
               <ResourceCard key={card.title} {...card} />
             ))}
-          </div>
-        </section>
-
-        <section>
-          <SectionLabel>QUICK LINKS</SectionLabel>
-          <div className="mt-3 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-            <h3 className="text-center text-3xl font-extrabold text-slate-900">Quick Links</h3>
-            <div className="mt-5 grid gap-3 md:grid-cols-2">
-              {quickLinks.map((linkCard) => (
-                <a
-                  key={linkCard.title}
-                  href={linkCard.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center justify-between rounded-xl bg-slate-100 px-4 py-4 transition hover:bg-slate-200"
-                >
-                  <div>
-                    <p className="text-lg font-bold text-slate-900">{linkCard.title}</p>
-                    <p className="text-sm text-slate-600">{linkCard.subtitle}</p>
-                  </div>
-                  <ExternalLink className="h-5 w-5 text-slate-800" />
-                </a>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <SectionLabel>CHAPTER ADVISORS</SectionLabel>
-          <div className="mt-3 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-            <h3 className="text-center text-4xl font-extrabold text-slate-900">Chapter Advisors</h3>
-            <div className="mt-6 grid gap-4 md:grid-cols-3">
-              <article className="rounded-2xl border border-slate-200 p-5">
-                <div className="flex items-center gap-4">
-                  <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-[#123b8f] text-white">
-                    <UserRound className="h-8 w-8" />
-                  </span>
-                  <div>
-                    <h4 className="text-3xl font-extrabold text-slate-900">Errick Prince</h4>
-                    <p className="text-3xl text-slate-600">DECA Advisor</p>
-                  </div>
-                </div>
-                <div className="mt-5 space-y-2 text-slate-700">
-                  <p className="flex items-center gap-2 text-xl">
-                    <Mail className="h-5 w-5" />
-                    errick_prince@roundrockisd.org
-                  </p>
-                  <p className="flex items-center gap-2 text-xl">
-                    <Phone className="h-5 w-5" />
-                    512-428-7234
-                  </p>
-                  <p className="flex items-center gap-2 text-xl">
-                    <MapPin className="h-5 w-5" />
-                    Portable 12A
-                  </p>
-                </div>
-              </article>
-
-              <article className="rounded-2xl border border-slate-200 p-5">
-                <div className="flex items-center gap-4">
-                  <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-[#123b8f] text-white">
-                    <UserRound className="h-8 w-8" />
-                  </span>
-                  <div>
-                    <h4 className="text-3xl font-extrabold text-slate-900">Anthony Ripley</h4>
-                    <p className="text-3xl text-slate-600">Assistant DECA Advisor</p>
-                  </div>
-                </div>
-                <div className="mt-5 space-y-2 text-slate-700">
-                  <p className="flex items-center gap-2 text-xl">
-                    <Mail className="h-5 w-5" />
-                    anthony_ripley@roundrockisd.org
-                  </p>
-                  <p className="flex items-center gap-2 text-xl">
-                    <Phone className="h-5 w-5" />
-                    512-428-7137
-                  </p>
-                  <p className="flex items-center gap-2 text-xl">
-                    <MapPin className="h-5 w-5" />
-                    Room D106
-                  </p>
-                </div>
-              </article>
-
-              <article className="rounded-2xl border border-slate-200 p-5">
-                <div className="flex items-center gap-4">
-                  <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-[#123b8f] text-white">
-                    <UserRound className="h-8 w-8" />
-                  </span>
-                  <div>
-                    <h4 className="text-3xl font-extrabold text-slate-900">Mr. Manor</h4>
-                    <p className="text-3xl text-slate-600">&nbsp;</p>
-                  </div>
-                </div>
-                <div className="mt-5 space-y-2 text-slate-700">
-                  <p className="flex items-center gap-2 text-xl">
-                    <Mail className="h-5 w-5" />
-                    &nbsp;
-                  </p>
-                  <p className="flex items-center gap-2 text-xl">
-                    <Phone className="h-5 w-5" />
-                    &nbsp;
-                  </p>
-                  <p className="flex items-center gap-2 text-xl">
-                    <MapPin className="h-5 w-5" />
-                    &nbsp;
-                  </p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <SectionLabel>CHAPTER CALENDAR</SectionLabel>
-          <div className="mt-3 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-sm">
-            <iframe
-              title="STP DECA Calendar"
-              src="https://calendar.google.com/calendar/u/0/embed?color=%23fa573c&src=c_bce3a759bc39d75c49e7601df3195d210a4cf2647902f3f73727a247a7774a38@group.calendar.google.com"
-              className="h-[520px] w-full rounded-xl border-0"
-              loading="lazy"
-            />
           </div>
         </section>
 
