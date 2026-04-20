@@ -61,45 +61,41 @@ export default function Landing() {
       </nav>
 
       <main className="mx-auto max-w-6xl px-4 pt-24">
-        <section className="pb-8">
-          <div className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-white/15 shadow-2xl">
-            <div
-              className="h-48 bg-cover bg-center brightness-125 md:h-56 lg:h-64"
-              style={{ backgroundImage: "url('/assets/landing-backdrop.png')" }}
-            />
-          </div>
-        </section>
-
-        <section className="flex min-h-[calc(100vh-6rem)] flex-col items-center justify-center text-center">
-          <img
-            src="/assets/deca-icon.png"
-            alt="STP DECA logo"
-            className="mb-6 h-20 w-20 rounded-xl border border-white/20 object-cover shadow-lg"
+        <section className="relative left-1/2 right-1/2 -mx-[50vw] w-screen overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-center brightness-125"
+            style={{ backgroundImage: "url('/assets/landing-backdrop.png')" }}
           />
-          <h1 className="text-5xl font-extrabold tracking-tight md:text-7xl">Stony Point DECA</h1>
-          <p className="mt-4 text-lg text-[#FAA41B] md:text-2xl">
-            Preparing Tomorrow&apos;s Business Leaders
-          </p>
-          <div className="mt-8 flex flex-wrap items-stretch justify-center gap-4">
-            <a
-              href="#"
-              className="rounded-lg bg-[#3b82f6] px-6 py-3 text-sm font-bold text-white transition hover:brightness-110"
-            >
-              Join DECA
-            </a>
-            <a
-              href="mailto:anthony_ripley@roundrockisd.org"
-              className="rounded-lg bg-[#2563eb] px-6 py-3 text-left text-sm font-bold text-white transition hover:brightness-110"
-            >
-              <p>Mailing List Request</p>
-              <p className="text-xs font-medium text-white/85">Email Mr. Ripley</p>
-            </a>
-            <Link
-              to="/login"
-              className="rounded-lg border border-white px-6 py-3 text-sm font-bold text-white transition hover:bg-white hover:text-[#0a0f1e]"
-            >
-              Member Login
-            </Link>
+          <div className="absolute inset-0 bg-[#0a0f1e]/45" />
+          <div className="relative mx-auto flex min-h-[calc(100vh-6rem)] max-w-6xl flex-col items-center justify-center px-4 text-center">
+            <img
+              src="/assets/deca-icon.png"
+              alt="STP DECA logo"
+              className="mb-6 h-20 w-20 rounded-xl border border-white/20 object-cover shadow-lg"
+            />
+            <h1 className="text-5xl font-extrabold tracking-tight md:text-7xl">Stony Point DECA</h1>
+            <p className="mt-4 text-lg text-[#FAA41B] md:text-2xl">Suits Blue Medals Gold</p>
+            <div className="mx-auto mt-8 grid w-full max-w-4xl gap-4 sm:grid-cols-3">
+              <a
+                href="#"
+                className="flex h-20 items-center justify-center rounded-xl bg-[#3b82f6] px-6 text-center text-3xl font-bold text-white transition hover:brightness-110 lg:text-4xl"
+              >
+                Join DECA
+              </a>
+              <a
+                href="mailto:anthony_ripley@roundrockisd.org"
+                className="flex h-20 flex-col items-center justify-center rounded-xl bg-[#2563eb] px-6 text-center transition hover:brightness-110"
+              >
+                <p className="text-[1.7rem] font-bold leading-tight text-white lg:text-[2.1rem]">Mailing List Request</p>
+                <p className="text-xl font-semibold leading-tight text-white/90 lg:text-2xl">Email Mr. Ripley</p>
+              </a>
+              <Link
+                to="/login"
+                className="flex h-20 items-center justify-center rounded-xl border border-white bg-[#07112a]/85 px-6 text-center text-3xl font-bold text-white transition hover:bg-white hover:text-[#0a0f1e] lg:text-4xl"
+              >
+                Member Login
+              </Link>
+            </div>
           </div>
         </section>
 
