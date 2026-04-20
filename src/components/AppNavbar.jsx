@@ -14,7 +14,10 @@ export default function AppNavbar({ studentId }) {
     <header className="border-b border-slate-200 bg-white">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <Link to="/dashboard" className="text-lg font-extrabold text-slate-900">
-          STP DECA
+          <span className="inline-flex items-center gap-2">
+            <img src="/assets/deca-icon.png" alt="STP DECA icon" className="h-7 w-7 rounded-md object-cover" />
+            STP DECA
+          </span>
         </Link>
         <p className="hidden text-sm font-semibold text-slate-700 md:block">Welcome, {studentId}</p>
         <button
